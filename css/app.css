@@ -35,14 +35,14 @@
     margin: 5px;
 }
 
-.log ul .player-turno {
-    color: rgba(8, 92, 160, 0.945);
-    background-color: #8b97da;
+.log ul .player-turn {
+    color: rgb(0, 140, 255);
+    background-color: #e4e8ff;
 }
 
-.log ul .monster-turno {
-    color: rgb(233, 20, 169);
-    background-color: #e697e9;
+.log ul .monster-turn {
+    color: rgb(199, 129, 178);
+    background-color: #ffc0c1;
 }
 
 button {

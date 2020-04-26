@@ -1,4 +1,4 @@
-nee Vue({
+new Vue({
     
     el: '#aap',
     

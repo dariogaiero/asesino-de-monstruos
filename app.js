@@ -5,7 +5,7 @@ new Vue({
         playerHealth: 100,
         monsterHealth: 100,
         gameIsRunning: false,
-
+        turns: [],
     },
 
     methods: {
@@ -21,7 +21,7 @@ new Vue({
             this.monsterHealth -= damage;
             this.turns.unshift({
                 isPlayer: true,
-                text: 'El Jugador golpea al MOSTRO por ' + damage
+                text: 'El Jugador golpea al MONSTRUO por ' + damage
             });
             if (this.checkWin()) {
                 return;
@@ -34,7 +34,7 @@ new Vue({
             this.playerHealth -= damage;
             this.turns.unshift({
                 isPlayer: false,
-                text: 'El MOSTRO lastima al jugador en ' + damage
+                text: 'El MONSTRUO lastima al jugador en ' + damage
             });
             this.checkWin();
         },
@@ -66,6 +66,11 @@ new Vue({
             var damage = this.calculateDamage(10, 20);
             this.monsterHealth -= damage;
 
+            this.turns.unshift({
+                isPlayer: true,
+                text: 'El Jugador golpea al MONSTRUO por ' + damage
+                });
+
             if (this.checkWin()) {
                 return;
             }
@@ -78,11 +83,19 @@ new Vue({
             } else {
                 this.playerHealth = 100;
             }
+            
+            this.turns.unshift({
+                isPlayer: true,
+                text: 'El jugador se cura por 10'
+    
+            });
+
             this.monsterAttacks();
         },
 
         giveUp: function () {
             this.gameIsRunning = false;
+            this.turns = [];
         },
 
     },

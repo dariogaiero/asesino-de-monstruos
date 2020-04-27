@@ -13,6 +13,7 @@ new Vue({
             this.gameIsRunning = true;
             this.playerHealth = 100;
             this.monsterHealth = 100;
+<<<<<<< HEAD
             this.turns = [];
         },
 
@@ -86,6 +87,26 @@ new Vue({
         },
 
         prueba: function () { },
+=======
+        },
+
+        attack: function () {
+
+        },
+
+        specialAttack: function () {
+
+        },
+
+        heal: function () {
+
+        },
+
+        giveUp: function () {
+            this.gameIsRunning = false;
+        },
+
+>>>>>>> 49ce8a66762d234ac5104a72cd9a320c4b038b31
     },
 
 });
